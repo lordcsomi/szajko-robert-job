@@ -7,6 +7,14 @@
 
 body {
     background-color: #f8f8f8;
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh; /* Makes the wrapper take up the entire viewport height */
 }
 
 .navbar {
@@ -15,6 +23,11 @@ body {
     align-items: center;
     padding: 20px;
     background-color: #ffffff;
+    position: fixed;  /* This makes the navbar stay at the top */
+    top: 0;  /* Aligns it to the top of the page */
+    width: 100%;  /* Ensures the navbar spans the full width of the viewport */
+    z-index: 1000;  /* Keeps it above other content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for better visibility */
 }
 
 .logo {
@@ -29,6 +42,11 @@ body {
 .hero-section {
     text-align: center;
     padding: 20px;
+    padding-top: 40%;
+    flex-grow: 1; /* Ensures hero section takes up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .image-container {
@@ -42,15 +60,15 @@ body {
 .large-image {
     position: relative;
     background-color: #E7A354;
-    width: 350px;  /* Larger size for the square */
-    height: 350px;
+    width: 80vw;  /* Larger size for the square based on viewport width */
+    height: 80vw; /* Keep it proportional to width */
     border-radius: 20px; /* Same rounding for all images */
 }
 
 .small-image-container {
     position: absolute;
     top: -50px; /* Start slightly above the large square */
-    left: -80px; /* Adjust this value as needed */
+    left: -8%; /* Adjust this value as needed */
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -64,9 +82,11 @@ body {
 }
 
 .hero-text h1 {
-    font-size: 32px;
+    font-size: 3em;  /* Make the text larger */
     margin-bottom: 10px;
-    line-height: 1.2; /* Adjust for line spacing */
+    line-height: 1.2;
+    font-family: 'Playfair Display', serif; /* Change to Joan-like font */
+    font-weight: bold; /* Make the text bold */
 }
 
 .hero-text p {
@@ -80,6 +100,7 @@ body {
     color: #ffffff;
     border: none;
     padding: 15px;
+    margin-top: 10%;
     border-radius: 50px;
     width: 90%;
     font-size: 16px;
@@ -88,4 +109,7 @@ body {
 
 .cta-button .arrow {
     color: #E7A354;
+    font-size: 2em; /* Increase arrow size */
+    font-weight: bold;
+    line-height: 0.5;  /* Set line-height so it doesn't affect the button height */
 }
