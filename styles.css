@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu-icon img {
+    width: 30px;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.large-image {
+    position: relative;
+    background-color: #E7A354;
+    width: 350px;  /* Larger size for the square */
+    height: 350px;
+    border-radius: 20px; /* Same rounding for all images */
+}
+
+.small-image-container {
+    position: absolute;
+    top: -50px; /* Start slightly above the large square */
+    left: -80px; /* Adjust this value as needed */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.small-image {
+    background-color: #d3d3d3;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px; /* Same rounding for small images */
+}
+
+.hero-text h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    line-height: 1.2; /* Adjust for line spacing */
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    width: 90%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cta-button .arrow {
+    color: #E7A354;
+}
