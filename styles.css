@@ -76,8 +76,8 @@ body {
 
 .small-image {
     background-color: #d3d3d3;
-    width: 100px;
-    height: 100px;
+    width: 23vw;
+    height: 23vw;
     border-radius: 20px; /* Same rounding for small images */
 }
 
@@ -100,7 +100,7 @@ body {
     color: #ffffff;
     border: none;
     padding: 15px;
-    margin-top: 10%;
+    margin-top: 7%;
     border-radius: 50px;
     width: 90%;
     font-size: 16px;
@@ -112,4 +112,132 @@ body {
     font-size: 2em; /* Increase arrow size */
     font-weight: bold;
     line-height: 0.5;  /* Set line-height so it doesn't affect the button height */
+}
+
+/* Statistics Section */
+.statistics-section {
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    background-color: transparent;
+}
+
+.statistics-background {
+    background-color: #d3d3d3;
+    border-radius: 30px;
+    width: 80%;
+    height: 50vh;
+    padding: 5%;
+    position: relative;
+    left: 17%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: right; /* Align everything to the right */
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    flex-direction: column; /* Keep numbers and text stacked vertically */
+    align-items: flex-end; /* Aligns the items to the right */
+}
+
+.stat-number-wrapper {
+    display: inline-flex; /* Display numbers and plus sign on the same line */
+    align-items: center;
+    gap: 5px; /* Space between the number and plus sign */
+}
+
+.stat-number {
+    font-size: 3em; /* Large font size for the numbers */
+    color: #333; /* Dark color for the number */
+    font-weight: bold;
+}
+
+.stat-plus {
+    font-size: 3em; /* Same font size for the plus sign */
+    color: #E7A354; /* Yellow color for the plus sign */
+    font-weight: bold;
+}
+
+.stat-text {
+    font-size: 18px; /* Smaller font size for the text below */
+    color: #333;
+    text-align: right; /* Ensure text is also aligned to the right */
+}
+
+/* For the yellow box background image */
+.yellow-box {
+    background-color: #E7A354; /* Yellow color */
+    width: 50vw; /* 60% of the viewport width */
+    height: 40vh; /* 60% of the viewport height */
+    border-radius: 20px;
+    position: absolute;
+    top: 0%; /* Adjust this to control the vertical placement */
+    left: -17%; /* Offset it slightly to the right (adjust as necessary) */
+    z-index: 10; /* Ensure it goes behind the statistics section */
+}
+
+.statistics-text {
+    width: 90%;
+    text-align: left; /* Align text to the left */
+    margin-top: 5%; /* Adds space between statistics and text */
+    font-size: 18px;
+    line-height: 1.6; /* Adjust line height for better readability */
+    color: #333;
+    margin-left: auto;
+    margin-right: auto; /* Ensures the text is centered horizontally */
+}
+
+.statistics-text b {
+    font-weight: bold; /* Make the text bold */
+    color: #000000;
+}
+
+/* Buttons under the text in the statistics section */
+.statistics-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the two buttons */
+    margin-top: 20px; /* Space between the text and buttons */
+}
+
+.statistics-button {
+    padding: 15px 30px;
+    font-size: clamp(0.8em, 2vw, 1em); /* Adjust font size based on button width */
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    width: 45vw; /* Button width is 45% of the viewport */
+    white-space: nowrap; /* Ensure text stays on one line */
+    text-align: center;
+    transition: background-color 0.3s ease;
+    overflow: hidden; /* Ensure no overflow of text */
+    text-overflow: ellipsis; /* Optional: Adds ellipsis if text is too long */
+}
+
+/* Black button with white text */
+.statistics-button-primary {
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+
+.statistics-button-primary:hover {
+    background-color: #E7A354; /* Change color on hover */
+    border: 2px solid #000; /* Add border on hover */
+    color: #000000;
+}
+
+/* Outline button */
+.statistics-button-outline {
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.statistics-button-outline:hover {
+    background-color: #E7A354;
+    color: #000000; /* On hover, reverse the colors */
 }
