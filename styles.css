@@ -259,10 +259,12 @@ body {
 /* Card container with horizontal scrolling */
 .munkak-cards-container {
     display: flex;
-    gap: 20px; /* Gap between cards */
-    overflow-x: scroll; /* Allows horizontal scrolling */
+    gap: 20px; /* Space between cards */
+    overflow-x: scroll; /* Allow horizontal scrolling */
     padding-bottom: 20px;
     scroll-snap-type: x mandatory; /* Smooth scrolling to snap cards */
+    scroll-padding-left: 5%; /* Adjust snapping point to 5% from the left */
+    scroll-behavior: smooth; /* Ensure smooth scrolling behavior */
 }
 
 .munkak-cards-container::-webkit-scrollbar {
@@ -272,11 +274,11 @@ body {
 /* Card styling */
 .munkak-card {
     flex: 0 0 80%; /* Each card takes 80% of the container width */
+    scroll-snap-align: start; /* Ensure cards align when sliding */
     background-color: white;
     border-radius: 20px;
-    overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    scroll-snap-align: start; /* Ensures cards align when scrolling */
+    padding: 10px;
 }
 
 /* Gray placeholder for image */
@@ -302,5 +304,101 @@ body {
 .munkak-card-text p {
     font-size: 1em;
     color: #555;
+}
+
+.munkak-card:first-child {
+    margin-left: 20px; /* Adjust the value as needed for spacing */
+}
+
+
+/* Rólam Section */
+.rolam-section {
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    background-color: transparent;
+}
+
+/* Gray background box */
+.rolam-background {
+    background-color: #d3d3d3;
+    border-radius: 30px;
+    width: 80%;
+    position: relative;
+    left: 17%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30px;
+}
+
+/* Yellow box for image */
+.rolam-yellow-box {
+    background-color: #E7A354;
+    width: 35vw;
+    height: 30vh;
+    border-radius: 20px;
+    position: absolute;
+    top: 0; 
+    left: -15%;
+    z-index: 10;
+}
+
+/* Rólam text area */
+.rolam-text {
+    width: 60%;
+    text-align: left;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 16px; 
+    line-height: 1.5;
+    color: #333;
+    margin-left: 32%;
+    margin-right: auto;
+}
+
+.rolam-text h3 {
+    font-size: 1.5em;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 10px;
+}
+
+.rolam-text p {
+    font-size: 1em;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Button container */
+.rolam-button-container {
+    margin-top: 35vh;
+    width: 35vw; /* Same width as the yellow box */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button styling */
+.rolam-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    width: 100%; /* Same width as the container */
+    font-size: 16px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5; /* Adjusts text alignment */
+}
+
+/* Arrow styling */
+.rolam-button .arrow {
+    color: #E7A354;
+    font-size: 2em; /* Increase arrow size */
+    font-weight: bold;
+    line-height: 0;  /* Set line-height so it doesn't affect the button height */
 }
 
