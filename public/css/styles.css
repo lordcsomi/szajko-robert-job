@@ -433,6 +433,21 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+/* Add spacing between gallery images and round the corners */
+.column img, .image-placeholder {
+    width: 100%;
+    border-radius: 12px;  /* Rounded corners for images and placeholders */
+    margin-bottom: 20px;  /* Gap between the images */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);  /* Optional: shadow for better aesthetics */
+}
+
+/* Style the placeholder with a gray background */
+.image-placeholder {
+    background-color: #d3d3d3;  /* Gray background for the placeholder */
+    display: block;
+}
+
+/* Contact Section */
 .contact-section {
     width: 100%; /* Full width */
     display: flex;
