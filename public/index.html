@@ -12,7 +12,7 @@
         <nav class="navbar">
             <div class="logo">LOGO</div>
             <div class="menu-icon">
-                <a href="#telefon"><img src="icons/call.png" alt="Menu Icon"></a>
+                <a href="#contact-section"><img src="icons/call.png" alt="Menu Icon"></a>
             </div>
         </nav>
     </header>
@@ -31,7 +31,7 @@
             <div class="hero-text">
                 <h1>Egyedi bútor<br>készítés</h1>
                 <p>Modern, a megrendelő igényeinek megfelelő, minőségi bútorok, elérhető áron, helyszíni színkatalógus segítségével.</p>
-                <a href="#telefon"><button class="cta-button">Lépjünk kapcsolatba <span class="arrow">→</span></button></a>
+                <a href="#contact-section"><button class="cta-button">Lépjünk kapcsolatba <span class="arrow">→</span></button></a>
             </div>
         </section>
         <section class="statistics-section">
@@ -61,8 +61,8 @@
                 <b>Igényes munkát elérhető áron.</b> A megbeszélt időpontot betartva.
             </div>
             <div class="statistics-button-container">
-                <button class="statistics-button statistics-button-primary">Lépjünk kapcsolatba</button>
-                <button class="statistics-button statistics-button-outline">Galléria</button>
+                <a href="#contact-section"><button class="statistics-button statistics-button-primary">Lépjünk kapcsolatba</button></a>
+                <a href="#gallery-section"><button class="statistics-button statistics-button-outline">Galléria</button></a>
             </div>        
         </section>
         <section class="munkak-section">
@@ -121,7 +121,7 @@
             <div class="rolam-background">
                 <div class="rolam-yellow-box">
                     <div class="rolam-button-container">
-                        <button class="rolam-button">Hívj fel <span class="arrow">→</span></button>
+                        <a href="#contact-section"><button class="rolam-button">Hívj fel <span class="arrow">→</span></button></a>
                     </div>
                 </div>
                 <div class="rolam-text">
@@ -130,12 +130,35 @@
                 </div>
             </div>
         </section>
-        <section class="gallery-section">
+        <section class="gallery-section" id="gallery-section">
             <div class="gallery-container">
                 <div class="column" id="left-column"></div>
                 <div class="column" id="right-column"></div>
             </div>
         </section>
+        <section class="contact-section" id="contact-section">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <button class="phone-button" onclick="window.location.href='tel:+36209844113'">Telefon számom:</button>
+                    <div class="phone-number">+36 20 984 4113</div>
+                    <div class="contact-hours">
+                        <p>Hétköznap 8:00 - 18:00</p>
+                        <p>Hétvégén 9:00 - 14:00</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/robi.szajko.3" target="_blank">
+                            <img src="icons/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <img src="icons/instagram.png" alt="Instagram">
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe src="https://maps.google.com/maps?q=Budapest%2018.%20ker%C3%BClet&t=&z=10&ie=UTF8&iwloc=&output=embed" width="400" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>              
     </main>
     <script src="js/script.js"></script>
 </body>

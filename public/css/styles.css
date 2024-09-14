@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -428,4 +432,79 @@ body {
     margin-bottom: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+.contact-section {
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    background-color: #f8f8f8;
+}
+
+.contact-container {
+    width: 90%; /* Use 90% of the page width */
+    max-width: 1200px; /* Limit the maximum width */
+    display: flex;
+    justify-content: space-between;
+    gap: 40px; /* Space between the columns */
+}
+
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.phone-button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px; /* Smaller padding to fit text */
+    font-size: 18px; /* Smaller font to fit in one line */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: auto; /* Adjust width automatically */
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+    text-align: center; /* Center the text */
+}
+
+.phone-number {
+    font-size: 22px; /* Slightly smaller font to fit in one line */
+    font-weight: bold;
+    margin-bottom: 10px;
+    white-space: nowrap; /* Prevent line breaks for phone number */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+.contact-hours {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+}
+
+.contact-map {
+    flex: 1;
+    position: relative;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 
