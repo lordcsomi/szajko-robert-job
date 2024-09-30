@@ -10,6 +10,16 @@ app.use(express.static('public'));
 // Serve images from the 'images' directory
 app.use('/images', express.static('images'));
 
+// Serve robots.txt
+app.get('/robots.txt', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'robots.txt'));
+});
+
+// Serve sitemap.xml (if you have one)
+app.get('/sitemap.xml', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'sitemap.xml')); // Ensure you have a sitemap.xml file in your public folder
+});
+
 // API endpoint to list images
 app.get('/api/images', (req, res) => {
   console.log("Received request for image list at /api/images");

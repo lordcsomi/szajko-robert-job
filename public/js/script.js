@@ -1,5 +1,3 @@
-/* script.js */
-
 // Function to fetch the list of image filenames from the server
 async function fetchImageList() {
     try {
@@ -141,3 +139,124 @@ async function displayGalleryImages() {
 }
 
 displayGalleryImages();
+
+
+// Function to animate the numbers in the statistics section
+function animateNumbers() {
+    const counters = document.querySelectorAll('.stat-number');
+    const duration = 1000; // Duration for the count-up animation (1 second)
+
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target'); // Get the target value
+        const start = 0;
+        const updateInterval = 20; // Update every 20ms
+        const totalSteps = duration / updateInterval; // Total steps for the animation
+        const increment = target / totalSteps; // Increment value for each step
+
+        let currentCount = start;
+
+        const updateCount = () => {
+            currentCount += increment;
+
+            if (currentCount < target) {
+                counter.innerText = Math.ceil(currentCount);
+                setTimeout(updateCount, updateInterval); // Continue updating
+            } else {
+                counter.innerText = target; // Set to target value when done
+            }
+        };
+
+        updateCount(); // Start the count-up animation
+    });
+}
+
+// Function to check if statistics section is in view and trigger the count-up
+function checkStatsVisibility() {
+    const statsSection = document.querySelector('.statistics-section');
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1 // Trigger when 10% of the section is visible
+    };
+
+    const statsObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateNumbers(); // Start the animation
+                observer.unobserve(entry.target); // Stop observing once animation starts
+            }
+        });
+    }, observerOptions);
+
+    statsObserver.observe(statsSection); // Observe the statistics section
+}
+
+checkStatsVisibility(); // Initialize the visibility check
+
+// Animate Navbar on Page Load
+window.addEventListener('load', () => {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.add('navbar-visible');
+});
+
+// Intersection Observer for Hero Text
+const heroTextObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('hero-text-visible');
+            observer.unobserve(entry.target);  // Stop observing once animated
+        }
+    });
+}, { threshold: 0.1 });
+
+// Target hero text and observe
+const heroText = document.querySelector('.hero-text');
+heroText.classList.add('hero-text-hidden');
+heroTextObserver.observe(heroText);
+
+// Apply initial navbar-hidden class
+document.querySelector('.navbar').classList.add('navbar-hidden');
+
+
+// Intersection Observer for Hero Section Images
+const heroImageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Animate the large image
+            const largeImage = document.querySelector('.large-image');
+            largeImage.classList.add('visible');
+            
+            // Animate the small images one by one
+            const smallImages = document.querySelectorAll('.small-image');
+            smallImages.forEach((img, index) => {
+                setTimeout(() => {
+                    img.classList.add('visible');
+                }, index * 300); // Delay each small image by 300ms
+            });
+            
+            observer.unobserve(entry.target);  // Stop observing once animated
+        }
+    });
+}, { threshold: 0.2 }); // Trigger animation when 20% of the hero section is visible
+
+// Observe the hero section images
+const heroSection = document.querySelector('.hero-section');
+heroImageObserver.observe(heroSection);
+
+// Intersection Observer for Floating and Fading In Text
+const textFadeObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);  // Stop observing once animated
+        }
+    });
+}, { threshold: 0.1 });
+
+// Select all text elements below the hero section
+const textElements = document.querySelectorAll('.float-fade-in-left');
+
+// Apply observer to each text element
+textElements.forEach(element => {
+    textFadeObserver.observe(element);
+});
