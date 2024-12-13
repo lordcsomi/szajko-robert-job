@@ -7,7 +7,6 @@ html {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
 }
 
 body {
@@ -650,16 +649,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 80vw; /* Slightly smaller so there's room for arrows on the sides */
+    max-width: 90vw;
     max-height: 90vh;
     background: transparent;
     overflow: hidden;
 }
 
 .lightbox-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Keeps full image visible */
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; 
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
 }
@@ -669,8 +668,10 @@ body {
 .lightbox-prev, 
 .lightbox-next {
     position: absolute;
-    background: none;
+    background: rgba(0, 0, 0, 0.4);
     border: none;
+    border-radius: 20px;
+    padding: 5px;
     color: white;
     font-size: 2rem;
     cursor: pointer;
@@ -702,6 +703,7 @@ body {
 .lightbox-close:hover {
     color: #E7A354; /* Accent color on hover */
 }
+
 
 
 

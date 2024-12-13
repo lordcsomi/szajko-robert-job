@@ -162,11 +162,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const closeBtn = document.querySelector('.lightbox-close');
     const prevBtn = document.querySelector('.lightbox-prev');
     const nextBtn = document.querySelector('.lightbox-next');
-    const galleryImages = document.querySelectorAll('.gallery-image');
+    
     closeLightbox(); // Close lightbox initially
 
     await displayGalleryImages(); // Wait until images are displayed
     console.log("Gallery initialized.");
+    const galleryImages = document.querySelectorAll('.gallery-image');
+    
 
     let currentIndex = 0;
 
