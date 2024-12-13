@@ -157,15 +157,16 @@ async function displayGalleryImages() {
 
 // Initialize gallery
 document.addEventListener('DOMContentLoaded', async () => {
-    await displayGalleryImages(); // Wait until images are displayed
-    console.log("Gallery initialized.");
-    
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.querySelector('.lightbox-image');
     const closeBtn = document.querySelector('.lightbox-close');
     const prevBtn = document.querySelector('.lightbox-prev');
     const nextBtn = document.querySelector('.lightbox-next');
     const galleryImages = document.querySelectorAll('.gallery-image');
+    closeLightbox(); // Close lightbox initially
+
+    await displayGalleryImages(); // Wait until images are displayed
+    console.log("Gallery initialized.");
 
     let currentIndex = 0;
 
